@@ -8,7 +8,7 @@ case class ValidatedValue(label: String, value: String, status: String)
 case class Field(label: String, picture: String)
 
 // OCR --> Collector
-case class RecognizedValue(Value)
+case class RecognizedValue(value: Value)
 
 // Collector --> correction
 case class CollectedValues(list: List[Value])
