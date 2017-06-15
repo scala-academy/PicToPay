@@ -22,8 +22,14 @@ version := "1.0"
 
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
-libraryDependencies += "org.typelevel" %% "cats" % "0.9.0"
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+
+lazy val commonDependencies = Seq(
+  "org.typelevel" %% "cats" % "0.9.0",
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+)
+
+libraryDependencies ++= commonDependencies
+
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the cats dependency to the set of dependencies that sbt will go
 // and fetch when it starts up.
