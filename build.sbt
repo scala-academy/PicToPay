@@ -22,6 +22,7 @@ version := "1.0"
 
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
+
 lazy val commonDependencies = Seq(
   "org.typelevel" %% "cats" % "0.9.0",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
