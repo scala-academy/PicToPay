@@ -14,11 +14,7 @@ object Orchestrator {
   def run(input: String): String = {
     val fields = FieldDetector.map(input)
 
-    val processed = for {
-      field <- fields
-      ocr <- OcrProcessor.map(field)}
-      yield ocr
-
+    val processed = for {field <- fields} yield OcrProcessor.map(field)
     val collected = Collector.map(processed)
     val corrected = Corrector.map(collected)
     val validated = Validator.map(corrected)

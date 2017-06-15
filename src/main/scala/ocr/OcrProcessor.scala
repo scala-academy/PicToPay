@@ -5,5 +5,6 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object OcrProcessor {
-  def map(f: Field): Future[RecognizedValue] = Future(RecognizedValue(Value("IBAN", "test")))
+  // TODO: Future?
+  def map(f: Field): RecognizedValue = RecognizedValue(Value("IBAN", "test"))
 }
