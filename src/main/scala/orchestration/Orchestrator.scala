@@ -1,23 +1,29 @@
-/**
-  * ING - CONFIDENTIAL
-  * ---------------------------------
-  * Copyright (C) 2017 ING Groep N.V.
-  * All rights reserved.
-  * ---------------------------------
-  */
 package orchestration
 
+import collection.Collector
+import correction.Corrector
 import detection.FieldDetector
 import ocr.OcrProcessor
+import output.OutputGenerator
+import validation.Validator
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
 object Orchestrator {
-  def run = {
-    val input = "random"
-
+  def run(input: String): String = {
     val fields = FieldDetector.map(input)
 
-    for (field <- fields) {
-      val ocr = OcrProcessor.map(field)
-    }
+    val processed = for {
+      field <- fields
+      ocr <- OcrProcessor.map(field)}
+      yield ocr
+
+    val collected = Collector.map(processed)
+    val corrected = Corrector.map(collected)
+    val validated = Validator.map(corrected)
+    val output = OutputGenerator.map(validated)
+
+    output
   }
 }

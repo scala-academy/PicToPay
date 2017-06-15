@@ -1,9 +1,9 @@
 import orchestration.Orchestrator
 
 object Main extends App {
-  println("Hello, World!")
+  println("Pic2Pay!")
 
-  Orchestrator.run
+  println(Orchestrator.run("input"))
 
   println("Done.")
 }

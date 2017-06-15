@@ -1,8 +1,9 @@
 package ocr
 
-import domain.{Field, RecognizedValue}
+import domain.{Field, RecognizedValue, Value}
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object OcrProcessor {
-  // TODO: return Future for yield function
-  def map(f: Field): RecognizedValue = ???
+  def map(f: Field): Future[RecognizedValue] = Future(RecognizedValue(Value("IBAN", "test")))
 }
