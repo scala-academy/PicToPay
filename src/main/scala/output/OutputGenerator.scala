@@ -4,5 +4,5 @@ import domain.ValidatedValues
 
 // creates JSON
 object OutputGenerator {
-  def map(values: ValidatedValues): String = values.list.flatMap(x => x + " ").toString()
+  def map(values: ValidatedValues): String = values.list.toString()
 }
