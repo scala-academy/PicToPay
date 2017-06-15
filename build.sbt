@@ -24,7 +24,12 @@ version := "1.0"
 // You can define other libraries as dependencies in your build like this:
 lazy val commonDependencies = Seq(
   "org.typelevel" %% "cats" % "0.9.0",
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+
+  "com.sksamuel.scrimage" % "scrimage-filters_2.11" % "2.1.7",
+  "com.sksamuel.scrimage" % "scrimage-core_2.11" % "2.1.7",
+  "com.sksamuel.scrimage" % "scrimage-io-extra_2.11" % "2.1.7"
+
 )
 
 libraryDependencies ++= commonDependencies
