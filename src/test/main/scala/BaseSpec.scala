@@ -1,3 +1,7 @@
 package main.scala
 
-object BaseSpec extends FlatSpec with Matchers with GivenWhenThen with ScalaFutures with EasyMockSugar
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.easymock.EasyMockSugar
+import org.scalatest.{FlatSpec, GivenWhenThen, Matchers}
+
+abstract class BaseSpec extends FlatSpec with Matchers with GivenWhenThen with ScalaFutures
