@@ -3,6 +3,9 @@
 *.class
 *.log
 
+<<<<<<< HEAD
+.idea/*
+.idea/.name
+.idea/workspace.xml
 project/target/
 target/
-.idea/*
