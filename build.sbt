@@ -28,9 +28,9 @@ lazy val commonDependencies = Seq(
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
 
   // for image cropping
-  "com.sksamuel.scrimage" % "scrimage-filters_2.11" % "2.1.7",
-  "com.sksamuel.scrimage" % "scrimage-core_2.11" % "2.1.7",
-  "com.sksamuel.scrimage" % "scrimage-io-extra_2.11" % "2.1.7"
+  "com.sksamuel.scrimage" %% "scrimage-filters" % "2.1.8",
+  "com.sksamuel.scrimage" %% "scrimage-core" % "2.1.8",
+  "com.sksamuel.scrimage" %% "scrimage-io-extra" % "2.1.8"
 
 )
 
