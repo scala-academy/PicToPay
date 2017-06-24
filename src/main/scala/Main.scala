@@ -1,11 +1,16 @@
 import detection.ImageCropper
 import orchestration.Orchestrator
 
-object Main extends App {
-  println("Pic2Pay!")
+object PicToPay {
 
-  println(Orchestrator.run("input"))
-  ImageCropper.crop("/Users/AirSe/Documents/Study/PicToPay/src/resources/Acceptgiro_ok-scale1-1.png")
+  def main(args: Array[String]): Unit = {
+    println("Pic2Pay!")
 
-  println("Done.")
+    val imgUrl = args.mkString
+    println(Orchestrator.run(imgUrl))
+
+
+    println("Done.")
+  }
+
 }
