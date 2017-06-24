@@ -27,7 +27,7 @@ object ImageCropper {
     implicit val writer = PngWriter.NoCompression
 
     // use custom implicit writer defined above instead of default
-    image.output (new File("/Users/AirSe/Documents/Study/PicToPay/src/resources/croppedAcceptGiro.png"))
+    image.output (new File("src/resources/croppedAcceptGiro.png"))
     println("Successfully cropped IBAN field")
 
   }

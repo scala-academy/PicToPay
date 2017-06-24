@@ -9,10 +9,10 @@ import validation.Validator
 
 
 object Orchestrator {
-  def run(input: String): String = {
-    val fields = FieldDetector.map(input)
+  def run(imgFile: String): String = {
+    val fields = FieldDetector.map(imgFile)
 
-    ImageCropper.crop(input)
+    ImageCropper.crop(imgFile)
 
     val processed = for {field <- fields} yield OcrProcessor.map(field)
     val collected = Collector.map(processed)
