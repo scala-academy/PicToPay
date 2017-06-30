@@ -4,9 +4,10 @@ import testUtils.BaseSpec
 
 class FieldDetectorSpec extends BaseSpec {
 
-  "The FieldDetector" should "yeild at least an IBAN" in {
-    val imgFile = getClass.getResource("/does-not-exist.png")
+  "The FieldDetector" should "yeild an IBAN" in {
+    val imgFile = getClass.getResource("/testPics/Acceptgiro_ok-scale1-1.png")
     val output = FieldDetector.map(imgFile)
-    output.contains("src/resources/generatedIBAN.png")
+    val result = output.map(f => f.label)
+    result should contain("IBAN")
   }
 }
