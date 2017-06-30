@@ -1,15 +1,14 @@
 import orchestration.Orchestrator
 
-object PicToPay {
+object PicToPay extends App{
+  println("Pic2Pay!")
 
-  def main(args: Array[String]): Unit = {
-    println("Pic2Pay!")
+  val imgFile = getClass.getResource("Acceptgiro_ok-scale1-1.png")
+  println(imgFile.getPath)
 
-    val imgFile = args.mkString
 
-    println(Orchestrator.run(imgFile))
+  println(Orchestrator.run(imgFile))
 
-    println("Done.")
-  }
+  println("Done.")
 
 }

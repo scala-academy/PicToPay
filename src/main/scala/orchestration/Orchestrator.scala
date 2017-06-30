@@ -1,5 +1,7 @@
 package orchestration
 
+import java.net.URL
+
 import collection.Collector
 import correction.Corrector
 import detection.FieldDetector
@@ -9,9 +11,10 @@ import validation.Validator
 
 
 object Orchestrator {
-  def run(imgFile: String): String = {
-    val fields = FieldDetector.map(imgFile)
+  def run(imgFile: URL): String = {
+    println(imgFile.getPath)
 
+    val fields = FieldDetector.map(imgFile)
     val processed = for {field <- fields} yield OcrProcessor.map(field)
     val collected = Collector.map(processed)
     val corrected = Corrector.map(collected)
