@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/scala-academy/PicToPay.png?label=ready&title=Ready)](https://waffle.io/scala-academy/PicToPay?utm_source=badge)
 # PicToPay
 App for easy payment of accept giros, by scanning images
 
