@@ -3,9 +3,6 @@ package validation
 import domain.{CorrectedValues, ValidatedValue, ValidatedValues, Value}
 import org.scalatest.{Matchers, WordSpec}
 
-/**
-  * Created by GK46IV on 15-6-2017.
-  */
 class ValidatorSpec extends WordSpec with Matchers {
 
   "Validator" should {

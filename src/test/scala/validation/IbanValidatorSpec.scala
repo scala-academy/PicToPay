@@ -2,9 +2,6 @@ package validation
 
 import org.scalatest.{Matchers, WordSpec}
 
-/**
-  * Created by GK46IV on 15-6-2017.
-  */
 class IbanValidatorSpec extends WordSpec with Matchers {
 
   "IbanValidator" should {

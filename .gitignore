@@ -1,10 +1,15 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Scala template
-*.class
-*.log
+# ignore hidden files and directories ...
+.*
 
-.idea/*
-.idea/.name
-.idea/workspace.xml
-project/target/
+# ... except those explicitly excluded below
+!.gitignore
+!.travis.yml
+
+# ignore project work directories
 target/
+node_modules/
+spark-warehouse/
+
+# ignore backups and log files
+*~
+*.log
