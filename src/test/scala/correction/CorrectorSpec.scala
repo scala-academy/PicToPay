@@ -2,6 +2,7 @@ package correction
 
 import domain._
 import testUtils.BaseSpec
+import IbanCorrectionFunctions._
 
 class CorrectorSpec extends BaseSpec {
   val whiteSpaceIban = " NL77 INGB 0123456 78 "
@@ -22,10 +23,15 @@ class CorrectorSpec extends BaseSpec {
   }
 
   it should "remove the white space from an IBAN number" in {
+    val corrected = Corrector.map(CollectedValues(List(Value("IBAN", whiteSpaceIban))))
 
+    corrected.list(0).value should be("NL77INGB012345678")
   }
 
   it should "fix an incorrect IBAN number" in {
+    //val newIban = incorrectIban.correctIbanChars
 
+    //println(newIban)
+    //newIban should be("tets")
   }
 }
