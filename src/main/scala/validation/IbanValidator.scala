@@ -4,6 +4,7 @@ package validation
   * Created by GK46IV on 15-6-2017.
   */
 object IbanValidator {
+
   def validate(iban: String): Status = {
     if (checkSumCheck(iban)) Valid
 //    else if (correctIban(iban)) Corrected
