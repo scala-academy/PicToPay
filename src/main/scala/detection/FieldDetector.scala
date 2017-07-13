@@ -11,8 +11,8 @@ import domain.{Field, FieldCoordinates}
 object FieldDetector {
 
   val fieldsCoordinates = List(
-    FieldCoordinates("IBAN", 190, 213, 121, 15),
-    FieldCoordinates("AmountOwed", 190, 59, 20, 15))
+    FieldCoordinates("IBAN", 190, 213, 121, 15))
+    //FieldCoordinates("AmountOwed", 190, 59, 20, 15))
 
   //override default writer compression config to gain max image quality
   implicit val writer = PngWriter.NoCompression
