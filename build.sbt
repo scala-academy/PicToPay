@@ -16,6 +16,16 @@ name := "Pic2Pay"
 organization := "ING"
 version := "1.0"
 
+
+val javacppVersion = "1.1"
+
+// Some dependencies like `javacpp` are packaged with maven-plugin packaging
+classpathTypes += "maven-plugin"
+
+// Platform classifier for native library dependencies
+lazy val platform = org.bytedeco.javacpp.Loader.getPlatform
+
+
 // Note, it's not required for you to define these three settings. These are
 // mostly only necessary if you intend to publish your library's binaries on a
 // place like Sonatype or Bintray.
@@ -30,7 +40,14 @@ lazy val commonDependencies = Seq(
   // for field image cropping
   "com.sksamuel.scrimage" %% "scrimage-filters" % "2.1.8",
   "com.sksamuel.scrimage" %% "scrimage-core" % "2.1.8",
-  "com.sksamuel.scrimage" %% "scrimage-io-extra" % "2.1.8"
+  "com.sksamuel.scrimage" %% "scrimage-io-extra" % "2.1.8",
+  "org.bytedeco" % "javacv" % javacppVersion,
+  "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04-"+ javacppVersion) classifier "",
+  "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04-"+ javacppVersion) classifier platform,
+  "org.bytedeco.javacpp-presets" % "opencv" % ("3.0.0-" + javacppVersion) classifier "",
+  "org.bytedeco.javacpp-presets" % "opencv" % ("3.0.0-" + javacppVersion) classifier platform,
+  "org.bytedeco.javacpp-presets" % "leptonica" % ("1.72-"+ javacppVersion) classifier "",
+  "org.bytedeco.javacpp-presets" % "leptonica" % ("1.72-"+ javacppVersion) classifier platform
 
 )
 
