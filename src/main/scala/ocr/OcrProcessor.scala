@@ -8,25 +8,23 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object OcrProcessor {
+  val TESSDATA_PREFIX = "data/tesseract-ocr-3.02/"
+  val lang = "eng"
 
   def init(): tesseract.TessBaseAPI  = {
-    val TESSDATA_PREFIX = "data/tesseract-ocr-3.02/"
-    val lang = "eng"
     val t: tesseract.TessBaseAPI = tesseract.TessBaseAPICreate
     val rc = tesseract.TessBaseAPIInit3(t, TESSDATA_PREFIX, lang)
 
     if (rc != 0) {
       tesseract.TessBaseAPIDelete(t)
-      println("Init failed")
+      //TODO: add logger
+      println("Failed to initalize Tesseract")
       sys.exit(3)
-    }  else {
-      println("Init is okay")
     }
 
     t
   }
 
-  // TODO: Future?
   def map(f: Field): RecognizedValue = {
     val t = init()
     val image = pixRead(f.picture)
@@ -36,14 +34,3 @@ object OcrProcessor {
     result
   }
 }
-
-
-object OcrProcessorApp extends App {
-
-  import  OcrProcessor._
-
-  val result = map(Field("test", "data/test1.png"))
-
-  println(result.value.value.trim)
-}
-
