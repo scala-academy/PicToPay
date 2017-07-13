@@ -21,7 +21,6 @@ object OcrProcessor {
       println("Failed to initalize Tesseract")
       sys.exit(3)
     }
-
     t
   }
 
