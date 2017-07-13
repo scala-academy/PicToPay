@@ -38,15 +38,15 @@ libraryDependencies ++= commonDependencies
 
 libraryDependencies ++= {
   lazy val platform = org.bytedeco.javacpp.Loader.getPlatform
-  val javacppVersion = "1.1"
+  val javacppVersion = "1.3"
   Seq(
     "org.bytedeco" % "javacv" % javacppVersion,
-    "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04-"+ javacppVersion) classifier "",
-    "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04-"+ javacppVersion) classifier platform,
-    "org.bytedeco.javacpp-presets" % "opencv" % ("3.0.0-" + javacppVersion) classifier "",
-    "org.bytedeco.javacpp-presets" % "opencv" % ("3.0.0-" + javacppVersion) classifier platform,
-    "org.bytedeco.javacpp-presets" % "leptonica" % ("1.72-"+ javacppVersion) classifier "",
-    "org.bytedeco.javacpp-presets" % "leptonica" % ("1.72-"+ javacppVersion) classifier platform
+    "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04.01-"+ javacppVersion) classifier "",
+    "org.bytedeco.javacpp-presets" % "tesseract" % ("3.04.01-"+ javacppVersion) classifier platform,
+    "org.bytedeco.javacpp-presets" % "opencv" % ("3.2.0-" + javacppVersion) classifier "",
+    "org.bytedeco.javacpp-presets" % "opencv" % ("3.2.0-" + javacppVersion) classifier platform,
+    "org.bytedeco.javacpp-presets" % "leptonica" % ("1.73-"+ javacppVersion) classifier "",
+    "org.bytedeco.javacpp-presets" % "leptonica" % ("1.73-"+ javacppVersion) classifier platform
   )
 }
 
