@@ -34,4 +34,12 @@ class CorrectorSpec extends BaseSpec {
     //println(newIban)
     //newIban should be("tets")
   }
+
+  "Corrections function" should "provide multiple corrections if possible" in {
+    val iban  = "NL09INGB0672515214"
+    val input = "NLO91NG8067Z515214"
+
+
+  }
+
 }
